@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<title>販売店を探す ノウキナビ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="ノウキナビ">
+<meta property="og:url"   content="http://noukinavi.nakweb.net/noukinavi_sp/">
+<meta property="og:image" content="http://noukinavi.nakweb.net/noukinavi_sp/ogp_image01.png">
+<link rel="apple-touch-icon" href="/noukinavi_sp/image/apple-touch-icon.png">
+<link rel="shortcut icon" href="/noukinavi_sp/image/favicon.ico">
+<link rel="stylesheet" href="/noukinavi_sp/css/default_s.css">
+<link rel="stylesheet" href="/noukinavi_sp/css/style_s.css">
+<link rel="stylesheet" href="/noukinavi_sp/css/flipsnap_s.css">
+<link rel="stylesheet" href="/noukinavi_sp/css/member/member_s.css" type="text/css" />
+<link rel="stylesheet" href="/noukinavi_sp/css/member/member_detail_s.css" type="text/css" />
+<link rel="stylesheet" href="/noukinavi_sp/js/colorbox/colorbox.css" type="text/css" />
+<link rel="stylesheet" href="/noukinavi_sp/css/smoothness/jquery-ui-1.10.4.custom.css" type="text/css" />
+<link rel="stylesheet" href="/noukinavi_sp/css/dialog_s.css" type="text/css" />
+<script src="/noukinavi_sp/js/jquery-2.1.0.min.js"></script>
+<script src="/noukinavi_sp/js/share_sp.js"></script>
+<script src="/noukinavi_sp/js/flipsnap.js"></script>
+<script src="/noukinavi_sp/js/flipsnap_setting.js"></script>
+<script src="/noukinavi_sp/js/menu_sp.js"></script>
+<script src="/noukinavi_sp/js/jquery.taphover.js"></script>
+<script src="/noukinavi_sp/js/acc_sp.js"></script>
+<script src="/noukinavi_sp/js/jquery.colorbox-min.js"></script>
+<script src="/noukinavi_sp/js/jquery.colorbox-ja.js"></script>
+<script src="/noukinavi_sp/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script>
+                $(function(){
+                    $('a.gallery').colorbox();
+                });
+
+                $(function(){
+                    //dialog 解除
+                    $('.cancelBtn, #offer_complete').on('click', function(e){
+                        e.preventDefault();
+                        $('.dialogBox').dialog('close');
+                    });
+                    //dialog OK処理
+                    $('#offer_request').on('click', function(e){
+                        e.preventDefault();
+                        // 登録処理
+                        $(this).closest('form').submit();
+                        //dialog 解除
+                        $('.dialogBox').dialog('close');
+                    });
+                    $('.dialogBox').dialog({
+                            autoOpen: false,
+                            closeOnEscape: false,
+                            modal: true,
+                            //width: '300',
+                            width: '90%',
+                            dialogClass: 'noTitleDialog',
+                            close : function(){
+                                //$(this).dialog("destory").remove();
+                            }
+                            //buttons: {
+                            //      "OK": function(){
+                            //              $(this).dialog('close');
+                            //      }
+                            //}
+                    });
+                    $('#button_request').click(function(e){
+                      e.preventDefault();
+                      $('#dialog_request').dialog('open');
+                    });
+
+                    $('.dialogBoxMap').dialog({
+                            autoOpen: false,
+                            closeOnEscape: false,
+                            modal: true,
+                            width: '300',
+                            dialogClass: 'mapDialog',
+                            close : function(){
+                                            //$(this).dialog("destory").remove();
+                            }
+                            //buttons: {
+                            //      "OK": function(){
+                            //              $(this).dialog('close');
+                            //      }
+                            //}
+                    });
+                    $('#member_map').click(function(e){
+                      e.preventDefault();
+                      $('#dialog_map').dialog('open');
+                    });
+                    //モーダル押したら消えてほしい場合
+                    //$(document).on("click", ".ui-widget-overlay", function(){
+                    //    $(this).next().find(".ui-dialog-content").dialog("close");
+                    //});
+                });
+                $(function() {
+                    $('.icon-status img').each(function(){
+                        var targetImg = $(this);
+                        var tempIconName = targetImg.attr('src').replace(/\/img\//, "/img/sp/");
+                        targetImg.attr('src', tempIconName);
+                    });
+                });
+                $(function() {
+                    $('.icon-store img').each(function(){
+                        var targetImg = $(this);
+                        var tempIconName = targetImg.attr('src').replace(/\/img\//, "/img/sp/");
+                        targetImg.attr('src', tempIconName);
+                    });
+                });
+            </script>
+<script type="text/javascript" charset="utf-8" src="https://maps.google.com/maps/api/js?v=3&sensor=false"></script>
+<script>
+	var gmg = new google.maps.Geocoder();
+	var map;
+	var center;
+	var marker;
+	var shopLat;
+	var shopLng;
+	$(function(){
+	    $('#member_map').click( function() {center = new google.maps.LatLng('', '')
+	        mapInitialize();
+	        marker = new google.maps.Marker({
+	            map: map,
+	            position: center
+	        });
+	        marker.setMap(map);
+	    });
+	});
+
+	function mapInitialize() {
+	    var options = {
+	        center: center,
+	        zoom: 15,
+	        mapTypeId: google.maps.MapTypeId.ROADMAP,
+	        scrollwheel: false,
+	        panControlOptions: {
+	            position: google.maps.ControlPosition.TOP_RIGHT
+	        },
+	        zoomControlOptions: {
+	            position: google.maps.ControlPosition.TOP_RIGHT
+	        },
+	        mapTypeControlOptions: {
+	            position: google.maps.ControlPosition.TOP_RIGHT
+	        }
+	    };
+	    map = new google.maps.Map($("#N00100000003_view").get(0), options);
+	}
+	        </script>
+</head>
+<body class="noukinavi_spmembermember_detail">
+<!-- Google Tag Manager -->
+<noscript>
+<iframe src="//www.googletagmanager.com/ns.html?id=GTM-WTGPTV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WTGPTV');</script>
+<!-- End Google Tag Manager -->
+<div id="page">
+    <header class="global">
+        <div id="logo_area" class="clearfix nWide">
+            <h1><a href="/noukinavi_sp/"><img src="/noukinavi_sp/img/sp/logo.png" alt="ノウキナビ みつける。つながる。"></a></h1>
+            <div id="site_menu" class="menuBtn"><a href="#" class="tap"><img src="/noukinavi_sp/img/sp/btn_menu.png" alt="MENU"></a></div>
+        </div>
+        <nav id="menu_nav">
+            <header class="smpNav">
+                <div class="nWide clearfix">
+                    <h1>ノウキナビメニュー</h1>
+                    <div class="btnR aboveClose"><a href="#" class="tap">閉じる</a></div>
+                </div>
+            </header>
+            <ul id="nav01" class="arrow_w">
+                <li id="forTop"><a href="/noukinavi_sp/">トップページ</a></li>
+                <li id="forShopUse"><a href="/noukinavi_sp/shop_use/">中古農機を探す</a></li>
+                <li id="forMember"><a href="/noukinavi_sp/member/">販売店を探す</a></li>
+                <li id="forAbout"><a href="/noukinavi_sp/about/">当サイトについて</a></li>
+            </ul>
+            <ul id="nav02" class="arrow_w">
+                <li id="forLogin"><a href="/noukinavi_sp/member/login.php">ログイン</a></li>
+                <li id="forNewAdd"><a href="/noukinavi_sp/member/register_gate.php">新規会員登録</a></li>
+            </ul>
+            <ul id="nav03" class="arrow_g">
+                <li id="forNews"><a href="/noukinavi_sp/news_list.php">お知らせ一覧</a></li>
+                <li id="forPrivacy"><a href="/noukinavi_sp/privacy/">プライバシーポリシー</a></li>
+                <li id="forSiteMap"><a href="/noukinavi_sp/sitemap/">サイトマップ</a></li>
+                <li id="forContact"><a href="/noukinavi_sp/contact/">お問い合わせ</a></li>
+                <li id="forInfo"><a href="/noukinavi_sp/info/">古物商許可証一覧</a></li>
+            </ul>
+            <footer class="centered smpNav">
+                <div class="btnR bottomClose"><a href="#" class="tap">閉じる</a></div>
+            </footer>
+        </nav>
+    </header>
+    <div id="topic_path">
+        <div class="clearfix nWide wBreak">
+            <ul>
+                <li><a class="standout" href="/noukinavi_sp/">トップページ</a></li>
+                <li><a class="standout" href="/noukinavi_sp/member/">販売店を探す</a></li>
+                <li class="current_page">なつ</li>
+            </ul>
+        </div>
+    </div>
+    <div id="pageTitle">
+        <div class="nWide wBreak">
+            <h2>なつ</h2>
+        </div>
+    </div>
+    <div id="pr_images">
+        <section class="nWide">
+            <div id="demo-pointmove">
+                <div class="viewport">
+                    <ul class="flipsnap">
+                        <li class="itemFl"><span><img src="/noukinavi_sp/img/no_image.png" alt="" width="244" height="164"></span></li>
+                        <li class="itemFl"><span><img src="/noukinavi_sp/img/no_image.png" alt="" width="244" height="164"></span></li>
+                        <li class="itemFl"><span><img src="/noukinavi_sp/img/no_image.png" alt="" width="244" height="164"></span></li>
+                        <li class="itemFl"><span><img src="/noukinavi_sp/img/no_image.png" alt="" width="244" height="164"></span></li>
+                    </ul>
+                </div>
+                <div class="pointer"></div>
+                <div class="prev noHasNext"><img src="/noukinavi_sp/img/sp/btn_slide_left.png" alt=""></div>
+                <div class="next"><img src="/noukinavi_sp/img/sp/btn_slide_right.png" alt=""></div>
+            </div>
+        </section>
+    </div>
+    <section id="shop_status">
+        <div class="colWrapper">
+            <div class="colInner">
+                <div class="colBox"><img src="/noukinavi_sp/img/icon_member_list_status_01_a.png" alt="" width="31" height="31"><br>
+                    <span>農家会員<br>
+                    登録受付中</span></div>
+                <div class="colBox"><img src="/noukinavi_sp/img/icon_member_list_status_02_a.png" alt="" width="31" height="31"><br>
+                    <span>県外の方も<br>
+                    農家登録受付中</span></div>
+                <div class="colBox"> <img src="/noukinavi_sp/img/sp/icon_member_list_status_03_b.png" alt="" width="31" height="31"><br>
+                    <span></span> </div>
+            </div>
+        </div>
+    </section>
+    <div class="overSet mb30">
+        <section class="nBox nWide wBreak">
+            <h1 class="fcR">店舗紹介</h1>
+            <div class="wrapperRG">
+                <div class="w85p mCentered">
+                    <p></p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="mb30">
+        <section class="nBox nWide wBreak">
+            <h1 class="fcR">当店へ農家登録をご希望される方へ</h1>
+            <div class="wrapperRG">
+                <div class="w85p mCentered">
+                    <p>おいでませ</p>
+                </div>
+                <form id="farmer_register" method="post" action="/noukinavi_sp/member/register_rule.php">
+                    <input type="hidden" name="shop_id" value="39" />
+                    <input type="hidden" name="type" value="2" />
+                </form>
+            </div>
+        </section>
+    </div>
+    <section class="nBox nWide wBreak mb30">
+        <h1 class="fcR">店舗詳細情報</h1>
+        <div class="wrapperRG">
+            <div class="w85p mCentered">
+                <div id="pr_base_info" class="member_block_inner">
+                    <table width="100%">
+                        <tr>
+                            <th scope="row">住所</th>
+                            <td> 〒522-0052<br>
+                                滋賀県彦根市長曽根南町 </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">電話番号</th>
+                            <td>000-000-000 </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">会員数</th>
+                            <td>1件</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">取扱メーカー</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="additional" scope="row">FAX</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="additional" scope="row">E-mail</th>
+                            <td><a class="info_link standout" href="mailto:yamashita1@nakweb.jp">yamashita1@nakweb.jp</a> </td>
+                        </tr>
+                        <tr>
+                            <th class="additional" scope="row">ホームページ</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="additional" scope="row">担当者</th>
+                            <td> なつ　なつ </td>
+                        </tr>
+                        <tr>
+                            <th class="additional" scope="row">営業日/定休日</th>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="mb30">
+        <div class="nBox nWide wBreak">
+            <div class="btnOrange tCenter mCentered mt20"><a class="tap w90p" href="javascript:void(0);" onclick="$('#farmer_register').submit();">この販売店に「農家登録」する</a></div>
+        </div>
+    </div>
+    <div id="dialog_request" style="display:none;" class="dialogBox">
+        <div class="dialogIcon"><img class="dialogImage" src="/noukinavi_sp/img/dialog_icon_common_request.png" /></div>
+        <div class="dialogTitle">この販売店へ農家登録を行います</div>
+        <div class="dialogMessage">
+            <p><em>「農家登録」を希望した販売店に「仮登録」します。</em><br>
+                OKをクリックすると、「なつ」に農家登録を希望する内容のメールが送信されます。<br>
+                後日、「なつ」からメールで連絡がありますのでお待ちください。一週間以上経っても連絡がない場合は、お手数ですがノウキナビ事務局までご連絡ください。<br>
+                <em>なお、農家登録は１アカウントにつき、１販売店となります。</em><br>
+                予めご了承のうえ、お申込みください。<br>
+                ※別の販売店に登録を変更する場合は、マイページより「農家登録の解除」が必要となります</p>
+        </div>
+        <div class="dialogPrefix"></div>
+        <div class="dialogForm clearfix">
+            <form action="" method="POST" name="form_request" id="form_request">
+                <input type="hidden" name="reg_kbn" value="register" />
+                <input type="hidden" name="execType" value="execRelation" />
+                <div class="dialog_btn_set">
+                    <div class="cancel"><a class="cancelBtn" href="#">キャンセル</a></div>
+                    <div class="submit">
+                        <button id="offer_request" class="dialogSubmit" type="submit">OK</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="dialogSuffix"></div>
+    </div>
+    <div id="dialog_map" style="display:none;" class="dialogBoxMap">
+        <div id="N00100000003_view" style="width:280px; height:150px;"></div>
+    </div>
+    <footer class="global">
+        <p class="copyright"><small>©2014 ノウキナビ® All Rights Reserved.</small></p>
+    </footer>
+</div>
+</body>
+</html>
