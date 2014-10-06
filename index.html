@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<title>newsite_html5_forSP_Ver01</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
+<link rel="shortcut icon" href="./favicon.ico">
+
+<link rel="stylesheet" href="./css/default_s.css">
+<link rel="stylesheet" href="./css/style_s.css">
+<link rel="stylesheet" href="./css/flipsnap_s.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="./js/share_sp.js"></script>
+<script src="./js/flipsnap.js"></script>
+<script src="./js/flipsnap_setting.js"></script>
+<script src="./js/menu_sp.js"></script>
+<script src="./js/acc_sp.js"></script>
+</head>
+<body>
+<div id="page">
+
+<header class="global">
+<div id="logo_area" class="clearfix nWide">
+    <h1><img src="./img/logo.png" alt="ノウキナビ みつける。つながる。"></h1>
+    <!-- <div id="user_name" class="wBreak"><span>ノウキタロウ様で<br>ログイン中</span></div> -->
+    <div id="site_menu" class="menuBtn"><a href="#"><img src="./img/btn_menu.png" alt="MENU"></a></div>
+</div>
+<nav id="menu_nav">
+<header class="smpNav clearfix">
+    <h1>○○○ナビメニュー</h1>
+    <div class="btnR aboveClose"><a href="#">閉じる</a></div>
+</header>
+<ul id="nav01" class="arrow_w">
+    <li id="forTop"><a href="#">トップページ</a></li>
+    <li id="forShopUse"><a href="#">中古農機を探す</a></li>
+    <li id="forMember"><a href="#">販売店を探す</a></li>
+    <li id="forAbout"><a href="#">当サイトについて</a></li>
+</ul>
+<ul id="nav02" class="arrow_w">
+    <li id="forLogin"><a href="#">ログイン/ログアウト</a></li>
+    <li id="forNewAdd"><a href="#">新規会員登録</a></li>
+    <li id="forMyPage"><a href="#">マイページ</a></li>
+    <li id="forWatch"><a href="#">ウォッチリスト</a></li>
+</ul>
+<ul id="nav03" class="arrow_g">
+    <li id="forNews"><a href="#">お知らせ一覧</a></li>
+    <li id="forPrivacy"><a href="#">プライバシーポリシー</a></li>
+    <li id="forSiteMap"><a href="#">サイトマップ</a></li>
+    <li id="forContact"><a href="#">お問い合わせ</a></li>
+    <li id="forInfo"><a href="#">○○許可証一覧</a></li>
+</ul>
+<footer class="centered smpNav">
+    <div class="btnR bottomClose"><a href="#">閉じる</a></div>
+</footer>
+</nav>
+</header>
+<div id="topic_path">
+    <div class="clearfix nWide wBreak">
+        <ul>
+            <li><a href="/" class="standout">トップページ</a></li>
+            <li><a href="/" class="standout">トップページ</a></li>
+            <li class="current_page">中古農機一覧</li>
+        </ul>
+    </div>
+</div>
+<div id="pageTitle">
+    <div class="nWide wBreak"><h2>当サイトについて</h2></div>
+</div>
+
+<section class="nBox nWide wBreak">
+<h1 class="fcR">電話・E-mailでのお問い合わせddddddddddddddddddddddddddd</h1>
+<div class="wrapperRG">
+    上赤下グレー
+    <div class="btnOrange tCenter"><a class="w90p" href="#">入力内容を確認する</a></div>
+    <div class="btnG tCenter mt15"><a class="w90p" href="#">前の画面に戻る</a></div>
+</div>
+</section>
+
+<section class="nBox nWide wBreak">
+<h1 class="fcR">電話・E-mailでのお問い合わせ</h1>
+<div class="wrapperRG">
+    <div class="w85p mCentered">
+        <h2 class="contactHead">農機ナビお問い合わせ事務局</h2>
+        <address>
+            <table id="tel_e_mail_set">
+                <tr>
+                    <th>電話番号</th>
+                    <td><a href="tel:090">090</a></td>
+                </tr>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td><a href="mailto:info@bscre8.com">info@bscre8.com</a></td>
+                </tr>
+            </table>
+        </address>
+    </div>
+</div>
+</section>
+
+<section class="nBox nWide wBreak">
+<h1 class="fcR">メールフォームでのお問い合わせ</h1>
+<p class="contanctLead"><b>（※）</b>印は必須項目です</p>
+<div class="wrapperRG">
+    <div class="w85p mCentered">
+
+        <form method="post" action="/contact/index.php">
+<dl id="input_field_inquiry_type">
+    <dt>お問い合わせ内容</dt>
+    <dd>
+        <label for="inputforminquiry_type0"><input type="radio" checked="checked" value="1" name="inputform[inquiry_type]" id="inputforminquiry_type0">ホームページの不具合に関するお問い合わせ</label>
+        <br>
+        <label for="inputforminquiry_type1"><input type="radio" value="2" name="inputform[inquiry_type]" id="inputforminquiry_type1">ホームページのご意見・ご要望</label>
+        <br>
+        <label for="inputforminquiry_type2"><input type="radio" value="9" name="inputform[inquiry_type]" id="inputforminquiry_type2">その他のお問い合わせ</label>
+    </dd>
+</dl>
+<dl id="input_field_member_type">
+    <dt>あなたについて</dt>
+    <dd>
+        <label for="inputformmember_type0"><input type="radio" checked="checked" value="1" name="inputform[member_type]" id="inputformmember_type0">販売店会員</label>
+        <br>
+        <label for="inputformmember_type1"><input type="radio" value="2" name="inputform[member_type]" id="inputformmember_type1">農家登録されている農家の方</label>
+        <br>
+        <label for="inputformmember_type2"><input type="radio" value="3" name="inputform[member_type]" id="inputformmember_type2">農家登録されていない農家の方</label>
+        <br>
+        <label for="inputformmember_type3"><input type="radio" value="9" name="inputform[member_type]" id="inputformmember_type3">その他</label>
+    </dd>
+</dl>
+<dl id="input_field_member_code">
+    <dt>会員ID<span class="attentions">（半角文字のみ入力可能）</span></dt>
+    <dd><input type="text" style="ime-mode:disabled;" value="" name="inputform[member_code]" id="member_code"></dd>
+</dl>
+<dl id="input_field_member_name">
+    <dt>お名前または担当者名<span class="cautions">（必須入力）</span></dt>
+    <dd>
+        <input type="text" value="" name="inputform[member_name1]" id="member_name1"> <input type="text" value="" name="inputform[member_name2]" id="member_name2">
+    </dd>
+</dl>
+<dl id="input_field_member_kana">
+    <dt>お名前または担当者名（かな）<span class="cautions">（必須入力）</span></dt>
+    <dd>
+        <input type="text" value="" name="inputform[member_kana1]" id="member_kana1"> <input type="text" value="" name="inputform[member_kana2]" id="member_kana2">
+    </dd>
+</dl>
+<dl id="input_field_member_works_name">
+    <dt>事業所名</dt>
+    <dd><input type="text" value="" name="inputform[member_works_name]" id="member_works_name"></dd>
+</dl>
+<dl id="input_field_member_works_kana">
+    <dt>事業所名（かな）</dt>
+    <dd><input type="text" value="" name="inputform[member_works_kana]" id="member_works_kana"></dd>
+</dl>
+<script charset="UTF-8" src="https://ajaxzip3.googlecode.com/svn/trunk/ajaxzip3/ajaxzip3-https.js"></script>
+<dl id="input_field_ajax_zip">
+    <dt>郵便番号</dt>
+    <dd>
+        <input type="text" value="" name="inputform[member_zip1]" id="input_field_zip1"> - <input type="text" value="" name="inputform[member_zip2]" id="input_field_zip2">
+        <input type="button" onclick="AjaxZip3.zip2addr('inputform[member_zip1]','inputform[member_zip2]','inputform[member_pref]','inputform[member_addr]' );" value="住所検索">
+    </dd>
+</dl>
+<dl id="input_field_Address">
+    <dt>ご住所</dt>
+    <dd id="address_text"><select name="inputform[member_pref]" id="selectAddrPref">    <option value="">選択して下さい。</option>    <option value="01">北海道</option>    <option value="02">青森県</option>    <option value="03">岩手県</option>    <option value="04">宮城県</option>    <option value="05">秋田県</option>    <option value="06">山形県</option>    <option value="07">福島県</option>    <option value="08">茨城県</option>    <option value="09">栃木県</option>    <option value="10">群馬県</option>    <option value="11">埼玉県</option>    <option value="12">千葉県</option>    <option value="13">東京都</option>    <option value="14">神奈川県</option>    <option value="15">新潟県</option>    <option value="16">富山県</option>    <option value="17">石川県</option>    <option value="18">福井県</option>    <option value="19">山梨県</option>    <option value="20">長野県</option>    <option value="21">岐阜県</option>    <option value="22">静岡県</option>    <option value="23">愛知県</option>    <option value="24">三重県</option>    <option value="25">滋賀県</option>    <option value="26">京都府</option>    <option value="27">大阪府</option>    <option value="28">兵庫県</option>    <option value="29">奈良県</option>    <option value="30">和歌山県</option>    <option value="31">鳥取県</option>    <option value="32">島根県</option>    <option value="33">岡山県</option>    <option value="34">広島県</option>    <option value="35">山口県</option>    <option value="36">徳島県</option>    <option value="37">香川県</option>    <option value="38">愛媛県</option>    <option value="39">高知県</option>    <option value="40">福岡県</option>    <option value="41">佐賀県</option>    <option value="42">長崎県</option>    <option value="43">熊本県</option>    <option value="44">大分県</option>    <option value="45">宮崎県</option>    <option value="46">鹿児島県</option>    <option value="47">沖縄県</option></select><input type="text" value="" name="inputform[member_addr]" id="input_addr"></dd>
+</dl>
+<dl id="input_field_member_tel_main">
+    <dt>お電話番号<span class="cautions">（必須入力）</span><span class="attentions">（半角文字のみ入力可能）</span><span class="attentions">（数字のみ入力可能）</span></dt>
+    <dd>
+        <input type="text" style="ime-mode:disabled;" value="" name="inputform[member_tel_main1]" id="member_tel_main1">-<input type="text" style="ime-mode:disabled;" value="" name="inputform[member_tel_main2]" id="member_tel_main2">-<input type="text" style="ime-mode:disabled;" value="" name="inputform[member_tel_main3]" id="member_tel_main3">
+    </dd>
+</dl>
+<dl id="input_field_member_mail">
+    <dt>メールアドレス<span class="attentions">（半角文字のみ入力可能）</span></dt>
+    <dd><input type="text" style="ime-mode:disabled;" value="" name="inputform[member_mail]" id="member_mail"></dd>
+</dl>
+<dl id="input_field_inquiry_details">
+    <dt>お問い合わせ内容<span class="cautions">（必須入力）</span></dt>
+    <dd><textarea name="inputform[inquiry_details]" id="inquiry_details"></textarea></dd>
+</dl>
+<dl id="input_field_resend_type">
+    <dt>弊社からの返信</dt>
+    <dd>
+        <label for="inputformresend_type0"><input type="radio" checked="checked" value="0" name="inputform[resend_type]" id="inputformresend_type0">不要</label>
+        <label for="inputformresend_type1"><input type="radio" value="1" name="inputform[resend_type]" id="inputformresend_type1">必要</label>
+    </dd>
+</dl>
+            <input type="hidden" value="" name="reg_kbn" id="reg_kbn">
+            <div class="submit_wrapper clearfix">
+                <div class="submit_wrapper_inner">
+                 <div class="submit"><input type="button" onclick="$(this).closest('form').find('#reg_kbn').val('check').closest('form').submit();" value="入力内容を確認" id="registerSubmit"></div>
+            </div>
+        </div>
+    </form>
+
+
+    </div>
+</div>
+</section>
+
+<div class="colWrapper">
+    <div class="colInner">
+        <div class="colBox">col1</div>
+        <div class="colBox">col2</div>
+    </div>
+</div>
+<hr style="margin: 15px 0;">
+<div class="colWrapper">
+    <div class="colInner">
+        <div class="colBox">col1</div>
+        <div class="colBox">col2</div>
+        <div class="colBox">col3</div>
+    </div>
+</div>
+<hr style="margin: 15px 0;">
+<div class="colWrapper">
+    <div class="colInner">
+        <div class="colBox">col1</div>
+        <div class="colBox">col2</div>
+        <div class="colBox">col3</div>
+        <div class="colBox">col4</div>
+    </div>
+</div>
+<hr style="margin: 15px 0;">
+<div class="colWrapper">
+    <div class="colInner">
+        <div class="colBox">col1</div>
+        <div class="colBox">col2</div>
+        <div class="colBox">col3</div>
+        <div class="colBox">col4</div>
+        <div class="colBox">col5</div>
+    </div>
+</div>
+
+<section>
+<div id="demo-pointmove">
+	<div class="viewport">
+		<ul class="flipsnap">
+			<li class="itemFl"><span><img src="./img/img_01.jpg" alt=""></span></li>
+			<li class="itemFl"><span><img src="./img/img_02.jpg" alt=""></span></li>
+			<li class="itemFl"><span><img src="./img/img_03.jpg" alt=""></span></li>
+			<li class="itemFl"><span><img src="./img/img_04.jpg" alt=""></span></li>
+			<li class="itemFl"><span><img src="./img/img_05.jpg" alt=""></span></li>
+		</ul>
+	</div>
+	<div class="pointer"></div>
+	<div class="prev noHasNext"><img src="./img/btn_slide_left.png" alt=""></div>
+	<div class="next"><img src="./img/btn_slide_right.png" alt=""></div>
+</div>
+</section>
+
+<div class="acc">
+    <section class="newAdd">
+    <h1 class="addHead">検索条件を変更する</h1>
+        <div class="addContent">
+           <p>test</p>
+     </div>
+    </section>
+    <section class="newAdd fcOpen">
+        <h1 class="addHead" id="acc1">並び順を変更する</h1>
+        <div class="addContent">
+           <p>test</p>
+        </div>
+    </section>
+    <section class="newAdd">
+        <h1 class="addHead" id="acc2">set販売</h1>
+        <div class="addContent">
+           <p>test</p>
+        </div>
+    </section>
+</div>
+<section class="main">
+<a href="http://www.google.co.jp"><h1>タイトル</h1>
+<p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<p>テキスト</p>
+<p><img src="./img/photo.jpg" alt="写真：駒ヶ根名物 ソースカツ丼 by いな垣" width="300" height="200"></p>
+<p><img src="./img/photo.jpg" alt="写真：駒ヶ根名物 ソースカツ丼 by いな垣"></p>
+<p>テキスト</p>
+<p>テキスト</p>
+<ul>
+<li>リスト</li>
+<li>リスト</li>
+<li>リスト</li>
+</ul>
+<ol>
+<li>リスト</li>
+<li>リスト</li>
+<li>リスト</li>
+</ol>
+<p>テキスト</p>
+<p>テキスト</p>
+<p>テキスト</p>
+</a>
+<!-- / .main --></section>
+
+<footer class="global">
+<p class="copyright"><small>Copyright &copy; newsite_html5_forSP_Ver01. All Rights Reserved.</small></p>
+</footer>
+
+<!-- / #page --></div>
+</body>
+</html>
